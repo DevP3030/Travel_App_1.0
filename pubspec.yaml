@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   smooth_page_indicator: ^1.2.1
+  flutter_map: ^8.1.1
+  latlong2: ^0.9.1
 
 
 dev_dependencies:
@@ -47,6 +49,7 @@ flutter:
      - assets/images/place3.png
      - assets/images/place4.png
      - assets/images/place5.png
+     - assets/images/tourdetailspagerImg.png
 
   fonts:
      - family: Marcellus
