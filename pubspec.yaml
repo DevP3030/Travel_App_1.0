@@ -1,0 +1,58 @@
+name: parth_tours_travels
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  smooth_page_indicator: ^1.2.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+     - assets/images/splash_screen.png
+     - assets/images/gp1bi.png
+     - assets/images/gp1fi.png
+     - assets/images/gp2bi.png
+     - assets/images/gp2fi.png
+     - assets/images/gp3bi.png
+     - assets/images/gp3fi.png
+     - assets/images/left_bar_icon.png
+     - assets/images/right_bar_icon.png
+     - assets/images/dots1.png
+     - assets/images/dots2.png
+     - assets/images/dots3.png
+     - assets/images/Logo.png
+     - assets/images/googleLogo.png
+     - assets/images/profile_avatar.png
+     - assets/images/search_icon.png
+     - assets/images/bookmark_icon.png
+     - assets/images/myLocationImg.png
+     - assets/images/locationMark.png
+     - assets/images/place1.png
+     - assets/images/place2.png
+     - assets/images/place3.png
+     - assets/images/place4.png
+     - assets/images/place5.png
+
+  fonts:
+     - family: Marcellus
+       fonts:
+         - asset: fonts/Marcellus-Regular.ttf
+
+     - family: Gilroy
+       fonts:
+         - asset: fonts/Gilroy-Medium.ttf
