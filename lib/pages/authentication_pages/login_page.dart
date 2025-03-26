@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/authentication_pages/signup_page.dart';
 import 'package:parth_tours_travels/pages/main_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -187,43 +188,63 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Container(
-                    height: 40,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade100),
-                      color: Color(0xffffffff),
-                      borderRadius: BorderRadius.all(Radius.circular(7)),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          width: 26,
-                          height: 20,
-                          image: Image.asset('assets/images/googleLogo.png').image,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupPage(),
                         ),
-                        SizedBox(width: 5),
-                        Text(
-                          "Log In With Google",
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
+                      );
+                    },
+                    child: Container(
+                      height: 40,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey.shade100),
+                        color: Color(0xffffffff),
+                        borderRadius: BorderRadius.all(Radius.circular(7)),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image(
+                            width: 26,
+                            height: 20,
+                            image: Image.asset('assets/images/googleLogo.png').image,
                           ),
-                        ),
-                      ],
+                          SizedBox(width: 5),
+                          Text(
+                            "Log In With Google",
+                            style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
-                  Center(
-                    child: Text(
-                      "Sign Up Here",
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        color: Color(0xffFF7D0D),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupPage(),
+                        ),
+                      );
+                    },
+                    child: Center(
+                      child: Text(
+                        "Sign Up Here",
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13,
+                          color: Color(0xffFF7D0D),
+                        ),
                       ),
                     ),
                   ),

@@ -214,19 +214,18 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     child: InkWell(
                       onTap: () {
-                        if (_formkey.currentState?.validate() ?? false) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text("Saved successfully"),
-                              behavior: SnackBarBehavior.floating,
-                              backgroundColor: Colors.orange,
-                            ),
-                          );
+                        // if (_formkey.currentState?.validate() ?? false) {
+                        //   ScaffoldMessenger.of(context).showSnackBar(
+                        //     SnackBar(
+                        //       content: Text("Saved successfully"),
+                        //       behavior: SnackBarBehavior.floating,
+                        //       backgroundColor: Colors.orange,
+                        //     ),
+                        //   );
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Mainpage()),
                           );
-                        }
                       },
                       child: Center(
                         child: Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:parth_tours_travels/pages/explore_page2.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -23,7 +24,12 @@ class _MapPageState extends State<MapPage> {
               child: Row(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ExplorePage2()),
+                      );
+                    },
                     child: Container(
                       height: 48,
                       width: 48,
@@ -77,13 +83,23 @@ class _MapPageState extends State<MapPage> {
                     ),
                   ),
                   SizedBox(width: 12),
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            Image.asset('assets/images/search_icon.png').image,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ExplorePage2()),
+                      );
+                    },
+                    child: Container(
+                      height: 48,
+                      width: 48,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image:
+                              Image.asset(
+                                'assets/images/search_icon.png',
+                              ).image,
+                        ),
                       ),
                     ),
                   ),
@@ -203,9 +219,8 @@ class _MapPageState extends State<MapPage> {
                 child: FlutterMap(
                   options: MapOptions(
                     initialCenter: LatLng(51.5074, -0.1278),
-                    initialZoom: 13.0, // Zoom level
+                    initialZoom: 18.0, // Zoom level
                   ),
-
                   children: [
                     TileLayer(
                       urlTemplate:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/tour_details_page.dart';
 
 class ExplorePage1 extends StatefulWidget {
   const ExplorePage1({super.key});
@@ -35,16 +36,24 @@ class _ExplorePage1State extends State<ExplorePage1> {
                     ),
                   ),
                   Spacer(),
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            Image.asset(
-                              'assets/images/profile_avatar.png',
-                            ).image,
-                        fit: BoxFit.cover,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TourDetailsPage()),
+                      );
+                    },
+                    child: Container(
+                      height: 48,
+                      width: 48,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image:
+                              Image.asset(
+                                'assets/images/profile_avatar.png',
+                              ).image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

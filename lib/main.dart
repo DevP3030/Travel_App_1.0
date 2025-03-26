@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/discover_page.dart';
+import 'package:parth_tours_travels/pages/explore_page2.dart';
+import 'package:parth_tours_travels/pages/hot_places_page.dart';
 import 'package:parth_tours_travels/pages/main_page.dart';
 import 'package:parth_tours_travels/pages/authentication_pages/login_page.dart';
 import 'package:parth_tours_travels/pages/authentication_pages/signup_page.dart';
@@ -28,7 +31,10 @@ class MyApp extends StatelessWidget {
       // home: SignupPage(),
       // home: Mainpage(),
       // home: TourDetailsPage(),
-      home: MapPage(),
+      // home: MapPage(),
+      // home: ExplorePage2(),
+      //home: HotPlacesPage(),
+      home: DiscoverPage(),
     );
   }
 }

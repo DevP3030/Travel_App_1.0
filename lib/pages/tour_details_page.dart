@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/map_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class TourDetailsPage extends StatefulWidget {
@@ -263,16 +264,24 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                       color: Color(0xffAAAAAA),
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xffFF7D0D),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Icon(
-                      Icons.airplanemode_active_sharp,
-                      color: Colors.white,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MapPage()),
+                      );
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFF7D0D),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Icon(
+                        Icons.airplanemode_active_sharp,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Container(
