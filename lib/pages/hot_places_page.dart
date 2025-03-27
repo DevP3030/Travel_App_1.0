@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/discover_page.dart';
 
 class HotPlacesPage extends StatefulWidget {
   const HotPlacesPage({super.key});
@@ -239,15 +240,20 @@ class _HotPlacesPageState extends State<HotPlacesPage> {
                     ),
                   ),
                 ),
-                Container(
-                  height: 105,
-                  width: 105,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Color(0xffC4C4C4)),
-                    image: DecorationImage(
-                      image: Image.asset('assets/images/place1.png').image,
-                      fit: BoxFit.cover,
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DiscoverPage(),),);
+                  },
+                  child: Container(
+                    height: 105,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Color(0xffC4C4C4)),
+                      image: DecorationImage(
+                        image: Image.asset('assets/images/place1.png').image,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

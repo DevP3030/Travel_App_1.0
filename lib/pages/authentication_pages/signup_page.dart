@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parth_tours_travels/pages/main_page.dart';
 
@@ -12,6 +13,45 @@ class _SignupPageState extends State<SignupPage> {
   final _formkey = GlobalKey<FormState>();
   bool visible1 = false;
   bool visible2 = false;
+  bool _isChecked = false;
+
+  void _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Terms and Conditions"),
+          content: Text("Do you agree to the terms and conditions?"),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                // Handle "Cancel" action
+              },
+              child: Text("Cancel"),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _isChecked=true;
+                });
+                Navigator.of(context).pop();
+                // Handle "Agree" action
+              },
+              child: Text("Agree"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+  void _onCheckboxChanged(bool? newValue) {
+    setState(() {
+      _isChecked = newValue ?? false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +138,7 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(height: 3),
                   TextFormField(
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                         borderSide: BorderSide(color: Colors.grey.shade300),
                       ),
@@ -127,9 +167,9 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 3),
                   TextFormField(
-                    obscureText: visible1,
+                    obscureText: !visible1,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                         borderSide: BorderSide(color: Colors.grey.shade300),
                       ),
@@ -141,8 +181,8 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         icon:
                             visible1
-                                ? Icon(Icons.lock_outline)
-                                : Icon(Icons.lock_open_outlined),
+                                ? Icon(CupertinoIcons.eye_fill)
+                                : Icon(CupertinoIcons.eye_slash_fill),
                       ),
                       hintText: "enter your password",
                     ),
@@ -171,9 +211,9 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(height: 3),
                   TextFormField(
-                    obscureText: visible2,
+                    obscureText: !visible2,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                         borderSide: BorderSide(color: Colors.grey.shade300),
                       ),
@@ -185,8 +225,8 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         icon:
                             visible2
-                                ? Icon(Icons.lock_outline)
-                                : Icon(Icons.lock_open_outlined),
+                                ? Icon(CupertinoIcons.eye_fill)
+                                : Icon(CupertinoIcons.eye_slash_fill),
                       ),
                       hintText: "enter your password",
                     ),
@@ -205,6 +245,42 @@ class _SignupPageState extends State<SignupPage> {
                     },
                   ),
                   SizedBox(height: 18),
+                  CheckboxListTile(
+                    checkColor: Color(0xffFF7D0D26),
+                    activeColor: Color(0xffFF7D0D26).withValues(alpha: 0.15),
+                    title: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "I agree and accept the ",
+                            style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13,
+                              color: Colors.black, // Default text color
+                            ),
+                          ),
+                          TextSpan(
+                            text: "term to use.",
+                            style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13,
+                              color: Color(
+                                0xFFFF7D0D,
+                              ), // Color for 'term to use.'
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    value: _isChecked,
+                    onChanged: _onCheckboxChanged,
+                    controlAffinity:
+                        ListTileControlAffinity
+                            .leading, // Position the checkbox
+                  ),
+                  SizedBox(height: 12),
                   Container(
                     height: 40,
                     width: double.infinity,
@@ -222,10 +298,17 @@ class _SignupPageState extends State<SignupPage> {
                         //       backgroundColor: Colors.orange,
                         //     ),
                         //   );
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Mainpage()),
-                          );
+                        if(_isChecked)
+                          {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Mainpage()),
+                            );
+                          }
+                        else
+                          {
+                            _showDialog(context);
+                          }
                       },
                       child: Center(
                         child: Text(
@@ -247,6 +330,5 @@ class _SignupPageState extends State<SignupPage> {
         ),
       ),
     );
-    ;
   }
 }

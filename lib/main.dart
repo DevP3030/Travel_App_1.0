@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/choice_date_page.dart';
+import 'package:parth_tours_travels/pages/date_page.dart';
 import 'package:parth_tours_travels/pages/discover_page.dart';
 import 'package:parth_tours_travels/pages/explore_page2.dart';
 import 'package:parth_tours_travels/pages/hot_places_page.dart';
@@ -34,7 +36,9 @@ class MyApp extends StatelessWidget {
       // home: MapPage(),
       // home: ExplorePage2(),
       //home: HotPlacesPage(),
-      home: DiscoverPage(),
+      // home: DiscoverPage(),
+      // home: ChoiceDatePage(),
+      home: DatePage(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parth_tours_travels/pages/authentication_pages/signup_page.dart';
 import 'package:parth_tours_travels/pages/main_page.dart';
@@ -61,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 7),
                   TextFormField(
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                        border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                         borderSide: BorderSide(color: Colors.grey.shade300),
                       ),
@@ -92,21 +93,21 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 7),
                   TextFormField(
-                    obscureText: visible,
+                    obscureText: !visible,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                         borderSide: BorderSide(color: Colors.grey.shade300),
                       ),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            (visible) ? visible = false : visible = true;
+                            (visible) ? visible = false:visible = true;
                           });
                         },
                         icon: visible
-                            ? Icon(Icons.lock_outline)
-                            : Icon(Icons.lock_open_outlined),
+                            ? Icon(CupertinoIcons.eye_fill)
+                            : Icon(CupertinoIcons.eye_slash_fill),
                       ),
                       hintText: "enter your password",
                     ),
