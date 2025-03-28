@@ -9,8 +9,12 @@ import 'package:parth_tours_travels/pages/authentication_pages/login_page.dart';
 import 'package:parth_tours_travels/pages/authentication_pages/signup_page.dart';
 import 'package:parth_tours_travels/pages/guide_pages/guide_page1.dart';
 import 'package:parth_tours_travels/pages/map_page.dart';
+import 'package:parth_tours_travels/pages/payment_method_page.dart';
+import 'package:parth_tours_travels/pages/profile_page.dart';
+import 'package:parth_tours_travels/pages/settings_page.dart';
 import 'package:parth_tours_travels/pages/splash_screen_page.dart';
 import 'package:parth_tours_travels/pages/tour_details_page.dart';
+import 'package:parth_tours_travels/pages/upcoming_tour_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       // home: LoginPage(),
-      // home: SplashScreenPage(),
+      home: SplashScreenPage(),
       // home: SignupPage(),
       // home: Mainpage(),
       // home: TourDetailsPage(),
@@ -38,7 +42,11 @@ class MyApp extends StatelessWidget {
       //home: HotPlacesPage(),
       // home: DiscoverPage(),
       // home: ChoiceDatePage(),
-      home: DatePage(),
+      // home: DatePage(),
+      // home: UpcomingTourPage(),
+      //home: ProfilePage(),
+      //home: SettingsPage(),
+      // home: PaymentMethodPage(),
     );
   }
 }

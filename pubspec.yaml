@@ -51,6 +51,8 @@ flutter:
      - assets/images/place4.png
      - assets/images/place5.png
      - assets/images/tourdetailspagerImg.png
+     - assets/images/profile_cover.png
+     - assets/images/Dabit_card.png
 
   fonts:
      - family: Marcellus

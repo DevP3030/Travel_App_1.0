@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parth_tours_travels/pages/upcoming_tour_page.dart';
 
 class ChoiceDatePage extends StatefulWidget {
   const ChoiceDatePage({super.key});
@@ -434,14 +435,19 @@ class _ChoiceDatePageState extends State<ChoiceDatePage> {
                         color: Color(0xffFF7D0D),
                         borderRadius: BorderRadius.all(Radius.circular(7)),
                       ),
-                      child: Center(
-                        child: Text(
-                          "3",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Gilroy-bold',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => UpcomingTourPage(),));
+                        },
+                        child: Center(
+                          child: Text(
+                            "3",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Gilroy-bold',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ),

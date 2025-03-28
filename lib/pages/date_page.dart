@@ -18,7 +18,6 @@ class _DatePageState extends State<DatePage> {
             height: 300,
             width: 300,
             child: Table(
-              columnWidths: ,
               border: TableBorder.all(color: Colors.black, width: 1.0),
               children: [
                 TableRow(
